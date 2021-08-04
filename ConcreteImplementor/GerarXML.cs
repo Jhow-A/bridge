@@ -15,6 +15,8 @@ namespace BridgePattern.ConcreteImplementor
             using (var fileStream = new FileStream(nomeArquivo, FileMode.OpenOrCreate))
             {
                 var xmlSerializer = new XmlSerializer(typeof(Funcionario));
+                xmlSerializer.Serialize(fileStream, funcionario);
+
                 Console.WriteLine($"Salário para o funcionário {funcionario.Nome} gerdo com sucesso em {nomeArquivo} \n");
             }
         }
